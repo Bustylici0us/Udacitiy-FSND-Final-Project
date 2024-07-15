@@ -7,7 +7,7 @@ app = Flask(__name__)
 setup_db(app)
 CORS(app)
 with app.app_context():
-#db_drop_and_create_all()
+db_drop_and_create_all()
 
     @app.route('/movies', methods=['GET'])
     @requires_auth('get:movies')
