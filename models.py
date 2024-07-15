@@ -1,6 +1,6 @@
 
 from flask_sqlalchemy import SQLAlchemy
-
+import os
 
 database_name = os.getenv("DATABASE_NAME")
 db = SQLAlchemy()
