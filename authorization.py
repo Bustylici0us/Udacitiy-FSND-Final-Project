@@ -3,6 +3,7 @@ from functools import wraps
 from jose import jwt
 from urllib.request import urlopen
 import json
+import os
 
 AUTH0_DOMAIN = os.getenv("AUTH0_DOMAIN")
 API_AUDIENCE = os.getenv("AUTH0_AUDIENCE")
