@@ -2,12 +2,12 @@
 from flask_sqlalchemy import SQLAlchemy
 import os
 
-database_name = os.getenv("DATABASE_NAME")
+database_path = os.getenv("DATABASE_NAME")
 db = SQLAlchemy()
 
 
-def setup_db(app, database_path=database_name):
-    app.config["SQLALCHEMY_DATABASE_URI"] = database_name
+def setup_db(app, database_path=database_path):
+    app.config["SQLALCHEMY_DATABASE_URI"] = database_path
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.app = app
     db.init_app(app)
