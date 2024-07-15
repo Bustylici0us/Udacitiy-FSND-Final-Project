@@ -4,8 +4,8 @@ from jose import jwt
 from urllib.request import urlopen
 import json
 
-AUTH0_DOMAIN = 'YOUR_AUTH0_DOMAIN'
-API_AUDIENCE = 'YOUR_API_AUDIENCE'
+AUTH0_DOMAIN = os.getenv("AUTH0_DOMAIN")
+API_AUDIENCE = os.getenv("AUTH0_AUDIENCE")
 ALGORITHMS = ['RS256']
 
 class AuthError(Exception):
