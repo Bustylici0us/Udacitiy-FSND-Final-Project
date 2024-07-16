@@ -6,12 +6,19 @@ Environmental Variables
 The application relies on several environmental variables to configure its behavior and integrate with external services. Below is a list of these variables and their significance:
 
 CASTING_ASSISTANT_TOKEN: A JWT token used to authenticate a user with the role of a Casting Assistant. This role has permissions to view actors and movies.
+
 CASTING_DIRECTOR_TOKEN: A JWT token for authenticating a user with the role of a Casting Director. This role extends the permissions of a Casting Assistant by allowing the addition or deletion of an actor from the database and modifying actors or movies.
+
 EXECUTIVE_PRODUCER_TOKEN: A JWT token designated for users with the Executive Producer role. This role has all the permissions of a Casting Director, with the added ability to add or delete a movie from the database.
+
 AUTH0_DOMAIN: The domain of the Auth0 application, used for secure authentication and authorization services.
+
 AUTH0_CLIENT_ID: The client ID for the Auth0 application, necessary for the app to identify itself to Auth0.
+
 AUTH0_CLIENT_SECRET: A secret key used by the application to authenticate with Auth0 securely. It should be kept confidential.
+
 SERVER_URL: The URL where the application is hosted. This is used for various callbacks and by the frontend to communicate with the backend.
+
 DATABASE_NAME: The name of the database where the application's data is stored. This is crucial for connecting to the database and performing operations.
 Security and Deployment
 This project uses Auth0 for secure login and authentication. Auth0 provides robust, easy-to-implement authentication and authorization services, ensuring that only authorized users can access certain functionalities based on their roles.
