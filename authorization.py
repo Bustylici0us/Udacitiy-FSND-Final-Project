@@ -97,13 +97,9 @@ def requires_auth(permission=''):
         @wraps(f)
         def wrapper(*args, **kwargs):
             token = get_token_auth_header()
-            print(f"Token: {token}")
             try:
-                payload = verify_decode_jwt(token)
-                print("Payload:", payload)
                 check_permissions(permission, payload)
             except AuthError as e:
-                print("AuthError:", e.error)
                 return jsonify(e.error), e.status_code
             return f(payload, *args, **kwargs)
         return wrapper
